@@ -174,7 +174,7 @@ def setEmu(oesid):
         if key in gl.oesunits[oesid]["emu"] :
             gl.oesunits[oesid]["emu"][key] = float(value)
         else :
-            return "following key not found: "+key
+            return {"error": "following key not found", "key": key}
     return gl.oesunits
 
 @route('/set/dcdc/<oesid>', method='GET')
